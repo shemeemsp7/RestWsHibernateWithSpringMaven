@@ -1,0 +1,4 @@
+com\sps\intf\IUserServiceIntf.class
+com\sps\entity\Person.class
+com\sps\dao\DaoManager.class
+com\sps\impl\UserServiceImpl.class
