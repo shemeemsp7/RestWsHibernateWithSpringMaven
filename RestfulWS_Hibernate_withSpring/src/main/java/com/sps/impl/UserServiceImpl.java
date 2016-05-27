@@ -24,6 +24,6 @@ public class UserServiceImpl implements IUserServiceIntf {
 	}
 
 	public Person saveUser(Person person) {
-		return getDaoManager().saveOrUpdatePerson(person);
+		return (Person) getDaoManager().saveOrUpdateEntity(person);
 	}
 }

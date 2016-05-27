@@ -1,8 +1,8 @@
 package com.sps.dao;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-import com.sps.entity.Person;
+import org.hibernate.Transaction;
 
 public class DaoManager {
  SessionFactory sessionFactory;
@@ -15,11 +15,19 @@ public void setSessionFactory(SessionFactory sessionFactory) {
 	this.sessionFactory = sessionFactory;
 }
  
-public Person saveOrUpdatePerson(Person person){
+public Object saveOrUpdateEntity(Object entity){
 	
-	person=(Person) getSessionFactory().openSession().save(person);
-	
-	return person;
+	Session session = sessionFactory.openSession();
+	Transaction tx = session.beginTransaction();
+	try {
+		session.saveOrUpdate(entity);
+		tx.commit();
+	} catch (Exception e) {
+		tx.rollback();
+	} finally {
+		session.close();
+	}
+	return entity;
 	
 	
 }
