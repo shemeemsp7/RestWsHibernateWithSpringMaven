@@ -29,7 +29,21 @@ public Object saveOrUpdateEntity(Object entity){
 	}
 	return entity;
 	
-	
 }
+/*public Object getEntity(Object entity){
+	
+	Session session = sessionFactory.openSession();
+	Transaction tx = session.beginTransaction();
+	try {
+		session.get(Pers, id)
+		tx.commit();
+	} catch (Exception e) {
+		tx.rollback();
+	} finally {
+		session.close();
+	}
+	return entity;
+	
+}*/
 
 }

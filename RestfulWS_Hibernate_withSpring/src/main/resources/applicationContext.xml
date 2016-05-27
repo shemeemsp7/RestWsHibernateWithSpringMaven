@@ -49,11 +49,4 @@
 		<property name="daoManager" ref="daoManager"></property>
 	</bean>
 	
-	<!-- <tx:annotation-driven transaction-manager="transactionManager" />
-
-	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory">
-			<ref local="sessionFactory" />
-		</property>
-	</bean> -->
 </beans>
